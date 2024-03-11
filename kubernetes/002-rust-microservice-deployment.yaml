@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rust-microservice
+spec:
+  selector:
+    matchLabels:
+      app: rust-microservice
+  template:
+    metadata:
+      labels:
+        app: rust-microservice
+    spec:
+      containers:
+      - name: rust-microservice
+        image: demo-microservice
+        ports:
+        - containerPort: 8080
