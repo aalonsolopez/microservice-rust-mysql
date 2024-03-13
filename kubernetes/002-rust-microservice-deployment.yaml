@@ -13,6 +13,13 @@ spec:
     spec:
       containers:
       - name: rust-microservice
-        image: demo-microservice
+        image: ghcr.io/aalonsolopez/demo-microservice:latest
         ports:
         - containerPort: 8080
+        env:
+        - name: DATABASE_URL
+          value: mysql://root:whalehello@mariadb:3306/demo
+        - name: RUST_BACKTRACE
+          value: full
+        - name: DNS_SERVER
+          value: kube-dns.kube-system.svc.cluster.local
