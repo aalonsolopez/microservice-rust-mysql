@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: rust-microservice
   annotations:
-    module.wasm.image/variant: compat-smart
+    module.wasm.image/variant: compat
 spec:
   containers:
   - name: rust-microservice
