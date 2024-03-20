@@ -5,6 +5,7 @@ metadata:
   annotations:
     module.wasm.image/variant: compat
 spec:
+  runtimeClassName: wasmedge-test
   containers:
   - name: rust-microservice
     image: ghcr.io/aalonsolopez/demo-microservice:latest
