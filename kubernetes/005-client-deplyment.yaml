@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-client
+spec:
+  selector:
+    matchLabels:
+      app: app-client
+  template:
+    metadata:
+      labels:
+        app: app-client
+    spec:
+      containers:
+      - name: app-client
+        image: nginx:alpine
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+      volumes:
+      - name: app-client-files
+        hostPath:
+          path: "/client"
+          type: Directory

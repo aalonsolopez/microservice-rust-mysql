@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rust-microservice
-  annotations:
-    module.wasm.image/variant: compat-smart
 spec:
   replicas: 1
   selector:
@@ -22,8 +20,8 @@ spec:
         - containerPort: 8080
         env:
         - name: DATABASE_URL
-          value: mysql://root:whalehello@10.152.183.53:3306/mysql
+          value: mysql://root:whalehello@mariadb.default.svc.cluster.local:3306/mysql
         - name: RUST_BACKTRACE
           value: full
         - name: DNS_SERVER
-          value: kube-dns.kube-system.svc.cluster.local:53
+          value: 10.152.183.10:53
