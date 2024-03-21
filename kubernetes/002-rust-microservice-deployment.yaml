@@ -14,7 +14,7 @@ spec:
       labels:
         app: rust-microservice
     spec:
-      runtimeClassName: wasmedge-test
+      runtimeClassName: wasmedge
       containers:
       - name: rust-microservice
         image: ghcr.io/aalonsolopez/demo-microservice:latest
@@ -22,8 +22,8 @@ spec:
         - containerPort: 8080
         env:
         - name: DATABASE_URL
-          value: mysql://root:whalehello@mariadb:3306/demo
+          value: mysql://root:whalehello@10.152.183.53:3306/mysql
         - name: RUST_BACKTRACE
           value: full
         - name: DNS_SERVER
-          value: kube-dns.kube-system.svc.cluster.local
+          value: kube-dns.kube-system.svc.cluster.local:53
