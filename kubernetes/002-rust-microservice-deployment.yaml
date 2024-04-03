@@ -24,4 +24,4 @@ spec:
         - name: RUST_BACKTRACE
           value: full
         - name: DNS_SERVER
-          value: 10.152.183.10:53
+          value: 10.152.183.10:53 # Default DNS server for microk8s
