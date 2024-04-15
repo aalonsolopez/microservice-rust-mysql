@@ -1,0 +1,9 @@
+version: 0.1.0
+addons:
+- name: dns
+- name: community
+- name: kwasm
+
+extraKubeletArgs:
+  --cluster-domain: cluster.local
+  --cluster-dns: 10.152.183.10
